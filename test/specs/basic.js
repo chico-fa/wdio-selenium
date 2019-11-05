@@ -1,18 +1,21 @@
-const assert = require('assert')
+//const assert = require('assert')
 const internetPage = require("../../pages/internet.page")
-//const { addFeature } = require('@wdio/allure-reporter').default
+const chai = require('chai')
+//const expect = chai.expect
+const should = chai.should
 
 describe('test title', () => {
-    it.skip('should have the right title', () => {
-        //allureReporter.addFeature('Feature')
+    it.only('should have the right title', () => {
         browser.url('https://webdriver.io')
         const title = browser.getTitle()
-        assert.strictEqual(title, 'WebdriverIO · Next-gen WebDriver test framework for Node.js')
+        //assert.strictEqual(title, 'WebdriverIO · Next-gen WebDriver test framework for Node.js')
+        //expect(title).to.be.equals('WebdriverIO · Next-gen WebDriver test framework for Node.js', "title is not equal")
+        title.should.be.equals('WebdriverIO · Next-gen WebDriver test framework for Node.js')
     })
 })
 
 describe("Interacting with Elements", function() {
-    it.only("Get text for element", () => {
+    it("Get text for element", () => {
         browser.url('http://the-internet.herokuapp.com')
         //let text = $("h2").getText()
         //let text  = $(".heading").getText()
