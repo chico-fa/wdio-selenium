@@ -1,8 +1,10 @@
 const assert = require('assert')
 const internetPage = require("../../pages/internet.page")
+//const { addFeature } = require('@wdio/allure-reporter').default
 
 describe('test title', () => {
-    it('should have the right title', () => {
+    it.skip('should have the right title', () => {
+        //allureReporter.addFeature('Feature')
         browser.url('https://webdriver.io')
         const title = browser.getTitle()
         assert.strictEqual(title, 'WebdriverIO · Next-gen WebDriver test framework for Node.js')
@@ -10,7 +12,7 @@ describe('test title', () => {
 })
 
 describe("Interacting with Elements", function() {
-    it("Get text for element", () => {
+    it.only("Get text for element", () => {
         browser.url('http://the-internet.herokuapp.com')
         //let text = $("h2").getText()
         //let text  = $(".heading").getText()

@@ -2,7 +2,7 @@ const assert = require('assert').strict
 internetPage = require('../../pages/internet.page')
 
 describe('Test elements actions', function () {
-    it('should click element', () => {
+    it.only('should click element', () => {
         browser.url('http://the-internet.herokuapp.com')
         internetPage.clickOnLink()
         //assert(browser.getUrl()).equal('http://the-internet.herokuapp.com/abtest')
