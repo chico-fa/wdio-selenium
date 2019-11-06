@@ -1,6 +1,4 @@
 //const assert = require('assert').strict
-const chai = require('chai')
-const assert = chai.assert; //no chaining possible
 internetPage = require('../../pages/internet.page')
 
 describe('Test elements actions', function () {
@@ -8,7 +6,8 @@ describe('Test elements actions', function () {
         browser.url('http://the-internet.herokuapp.com')
         internetPage.clickOnLink()
         //assert(browser.getUrl()).equal('http://the-internet.herokuapp.com/abtest')
-        assert.strictEqual((browser.getUrl()),('http://the-internet.herokuapp.com/abtest'))
+        //assert.strictEqual((browser.getUrl()),('http://the-internet.herokuapp.com/abtest'))
+        expect(browser.getUrl()).to.be.a('string').and.equal('http://the-internet.herokuapp.com/abtest')
     })
 
     it('should get text', () => {
