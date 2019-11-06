@@ -1,9 +1,9 @@
 //const assert = require('assert')
 const internetPage = require("../../pages/internet.page")
+
 const chai = require('chai')
 //const expect = chai.expect
-const should = chai.should()
-
+//const should = chai.should()
 //Assert - TDD style
 const assert = chai.assert; //no chaining possible
 
@@ -11,9 +11,9 @@ describe('test title', () => {
     it.only('should have the right title', () => {
         browser.url('https://webdriver.io')
         const title = browser.getTitle()
-        //assert.strictEqual(title, 'WebdriverIO · Next-gen WebDriver test framework for Node.js')
+        assert.strictEqual(title, 'WebdriverIO · Next-gen WebDriver test framework for Node.js')
         //expect(title).to.be.equals('WebdriverIO · Next-gen WebDriver test framework for Node.js', "title is not equal")
-        title.should.be.equals('WebdriverIO · Next-gen WebDriver test framework for Node.js')
+        //title.should.be.equals('WebdriverIO · Next-gen WebDriver test framework for Node.js')
     })
 })
 

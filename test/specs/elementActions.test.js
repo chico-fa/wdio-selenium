@@ -1,4 +1,6 @@
-const assert = require('assert').strict
+//const assert = require('assert').strict
+const chai = require('chai')
+const assert = chai.assert; //no chaining possible
 internetPage = require('../../pages/internet.page')
 
 describe('Test elements actions', function () {
