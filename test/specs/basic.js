@@ -2,7 +2,7 @@
 const internetPage = require("../../pages/internet.page")
 
 describe('test title', () => {
-    it.only('should have the right title', () => {
+    it('should have the right title', () => {
         browser.url('https://webdriver.io')
         const title = browser.getTitle()
         assert.strictEqual(title, 'WebdriverIO · Next-gen WebDriver test framework for Node.js')
@@ -23,10 +23,13 @@ describe("Interacting with Elements", function() {
         internetPage.getSpecificElementText(3)
     })
     it("Is footer Displayed?", () => {
-        console.log(internetPage.pageFooter.isDisplayed())
+        //console.log(internetPage.pageFooter.isDisplayed())
+        expect(internetPage.pageFooter).to.exist
+        //expect(a).to.be.equals(b, "a and b are not equal")
     })
     it("Does the header exist?", () => {
-         console.log(internetPage.pageHeader.isExisting())
+         //console.log(internetPage.pageHeader.isExisting())
+         expect(internetPage.pageHeader).to.exist
     })
     it("Is footer in viewport?", () => {
         console.log(internetPage.pageFooter.isDisplayedInViewport())

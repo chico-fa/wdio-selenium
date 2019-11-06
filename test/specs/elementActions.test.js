@@ -1,13 +1,14 @@
 //const assert = require('assert').strict
+var plugin = require('chai-jq')
 internetPage = require('../../pages/internet.page')
 
 describe('Test elements actions', function () {
-    it.only('should click element', () => {
+    it('should click element', () => {
         browser.url('http://the-internet.herokuapp.com')
         internetPage.clickOnLink()
         //assert(browser.getUrl()).equal('http://the-internet.herokuapp.com/abtest')
         //assert.strictEqual((browser.getUrl()),('http://the-internet.herokuapp.com/abtest'))
-        expect(browser.getUrl()).to.be.a('string').and.equal('http://the-internet.herokuapp.com/abtest')
+        expect(browser.getUrl()).to.equal('http://the-internet.herokuapp.com/abtest')
     })
 
     it('should get text', () => {
@@ -15,10 +16,17 @@ describe('Test elements actions', function () {
         assert.strictEqual((internetPage.getSpecificElementText(1)),('A/B Testing'))
     })
 
-    it('should click checkbox', () => {
+    it('should get text', () => {
+        browser.url('http://the-internet.herokuapp.com')
+        expect(internetPage.getSpecificElementText(2)).to.equal('Add/Remove Elements')
+    })
+
+    it.only('should click checkbox', () => {
+        browser.url('http://the-internet.herokuapp.com')
         internetPage.clickLink(6)
         internetPage.clickCheckbox(1)
         assert((internetPage.checkboxes(1)).isSelected())
+        
     })
 
     it('should uncheck checkbox', () => {
