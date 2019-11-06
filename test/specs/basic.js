@@ -2,7 +2,10 @@
 const internetPage = require("../../pages/internet.page")
 const chai = require('chai')
 //const expect = chai.expect
-const should = chai.should
+const should = chai.should()
+
+//Assert - TDD style
+const assert = chai.assert; //no chaining possible
 
 describe('test title', () => {
     it.only('should have the right title', () => {
